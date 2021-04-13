@@ -1,19 +1,19 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Ignite Introdução Solid Documentation",
-        "description": "This is an API Rest",
+        "title": "Atlas",
+        "description": "Essa é uma documentação sobre a Atlas API.",
         "version": "1.0.0",
         "contact": {
-            "email": "ofelipe0@hotmail.com"
+            "email": ""
         }
     },
     "paths": {
         "/users": {
             "post": {
-                "tags": ["Category"],
-                "summary": "Create a category",
-                "description": "Create a new category",
+                "tags": ["users"],
+                "summary": "Create a User",
+                "description": "Create a new User",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -28,8 +28,8 @@
                                     }
                                 },
                                 "example": {
-                                    "name": "Category name sample",
-                                    "description": "Category description sample"
+                                    "name": "User name sample",
+                                    "description": "User description sample"
                                 }
                             }
                         }
@@ -40,12 +40,12 @@
                         "description": "Created"
                     },
                     "500": {
-                        "description": "Category already exists"
+                        "description": "User already exists"
                     }
                 }
             },
             "get": {
-                "tags": ["Category"],
+                "tags": ["users"],
                 "summary": "List all users",
                 "description": "List all users",
                 "responses": {
@@ -69,6 +69,16 @@
                         }
                     }
                 }
+            }
+        },
+        "users/{user_id}": {
+            "get": {
+                "tags": ["users"]
+            }
+        },
+        "users/{user_id}/admin": {
+            "patch": {
+                "tags": ["users"]
             }
         }
     }
